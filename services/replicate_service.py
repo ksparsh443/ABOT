@@ -9,11 +9,11 @@ load_dotenv()
 # REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 
 # Check if the token is set
-if REPLICATE_TOKEN is None:
+if tok is None:
     raise ValueError("REPLICATE_API_TOKEN is not set in the .env file")
 
 # Set the API token in the environment variable
-os.environ["REPLICATE_API_TOKEN"] = REPLICATE__TOKEN
+os.environ[""] = tok
 
 
 def generate_video(prompt, num_frames=50):
