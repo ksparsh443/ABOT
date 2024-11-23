@@ -15,6 +15,9 @@ def generate_image(prompt, size, output_file):
         bool: True if the image was successfully generated, False otherwise.
     """
     try:
+        # Set the API token for authentication
+        replicate.api_token = os.getenv("REPLICATE_API_TOKEN")  # Fetch from environment variable
+
         # Input schema for the model
         input_data = {
             "size": size,
@@ -22,15 +25,19 @@ def generate_image(prompt, size, output_file):
         }
 
         # Call the Replicate model
-        output = replicate.run(
+        output_url = replicate.run(
             "recraft-ai/recraft-v3",
             input=input_data
         )
 
-        # Save the output image
-        with open(output_file, "wb") as file:
-            file.write(output.read())
-        return True
+        # Download the output image
+        if output_url:
+            response = requests.get(output_url, stream=True)
+            if response.status_code == 200:
+                with open(output_file, "wb") as file:
+                    file.write(response.content)
+                return True
+        return False
     except Exception as e:
         print(f"Error: {e}")
         return False
