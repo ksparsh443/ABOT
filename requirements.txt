@@ -1,0 +1,7 @@
+streamlit
+replicate
+ torch 
+ diffusers 
+ transformers
+ scipy
+  python-dotenv

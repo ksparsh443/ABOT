@@ -1,0 +1,15 @@
+# Ignore environment files
+.env
+*.env
+*.json
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore image generation files that might contain secrets
+imagegen.py
+services/replicate_service.py
+
+# Ignore any other files or folders you don't want to push
+*.log
+*.bak

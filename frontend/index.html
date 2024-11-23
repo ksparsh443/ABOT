@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOT Services</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Update path if necessary -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOT Services</title>
+    <style>
+        /* Flashing marquee with colorful effect */
+        .flash-marquee {
+            font-size: 36px;
+            font-weight: bold;
+            display: inline-block;
+            animation: flash 1s infinite alternate, move 5s linear infinite;
+            color: #ff6347;
+            background: linear-gradient(90deg, #ff6347, #ff1493, #8a2be2, #32cd32, #1e90ff);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes flash {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes move {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flashing marquee using modern CSS -->
+    <div class="flash-marquee">ABOT</div>
+
+    <!-- Simple marquee (deprecated) -->
+    <marquee style="font-size: 36px; font-weight: bold; color: #ff6347; background-color: #f0f8ff; padding: 10px;">
+        ABOT
+    </marquee>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="ABOT Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to ABOT</h1>
+        <p>Your AI-powered creative assistant</p>
+        <br>
+        <a href="#services" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="services" class="service-section">
+        <h2>Our Services</h2>
+        <button onclick="generateImage()">Generate Image</button>
+        <button onclick="generateMusic()">Generate Music</button>
+        <button onclick="generateVideo()">Generate Video</button>
+    </section>
+
+    <div id="image-output"></div>
+    <div id="music-output"></div>
+    <div id="video-output"></div>
+
+    <footer>
+        <p>&copy; 2024 ABOT. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
